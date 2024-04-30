@@ -1,0 +1,8 @@
+body{
+    background-color: rgba(13, 110, 253, .25) !important;
+    color: white !important;
+}
+.heading{
+    border:1px solid white !important;
+    color: black;
+}
