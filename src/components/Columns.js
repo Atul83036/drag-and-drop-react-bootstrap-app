@@ -131,7 +131,7 @@ const Columns = () => {
         <DragDropContext onDragEnd={onDragEnd}>
           {Object.keys(cards).map((column, columnIndex) => (
             <Col key={columnIndex} className='m-2' style={{borderRadius:'5px', backgroundColor:'#0a58ca'}}>
-              <h5 >{column}</h5>
+              <h5 style={{color:'white'}}>{column}</h5>
               <hr/>
               <Droppable droppableId={column}>
                 {(provided) => (
@@ -169,7 +169,7 @@ const Columns = () => {
         <Modal.Body>
           <Form>
             <Form.Group controlId="title">
-              <Form.Label>Title</Form.Label>
+              <Form.Label >Title</Form.Label>
               <Form.Control type="text" value={title} onChange={handleTitleChange} />
             </Form.Group>
             <Form.Group controlId="description">
