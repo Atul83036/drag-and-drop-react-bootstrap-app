@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/drag-and-drop-react-bootstrap-app/static/css/main.f656bbf3.css",
-    "main.js": "/drag-and-drop-react-bootstrap-app/static/js/main.4d839cd4.js",
+    "main.css": "/drag-and-drop-react-bootstrap-app/static/css/main.0b91dae4.css",
+    "main.js": "/drag-and-drop-react-bootstrap-app/static/js/main.d739181b.js",
     "index.html": "/drag-and-drop-react-bootstrap-app/index.html",
-    "main.f656bbf3.css.map": "/drag-and-drop-react-bootstrap-app/static/css/main.f656bbf3.css.map",
-    "main.4d839cd4.js.map": "/drag-and-drop-react-bootstrap-app/static/js/main.4d839cd4.js.map"
+    "main.0b91dae4.css.map": "/drag-and-drop-react-bootstrap-app/static/css/main.0b91dae4.css.map",
+    "main.d739181b.js.map": "/drag-and-drop-react-bootstrap-app/static/js/main.d739181b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f656bbf3.css",
-    "static/js/main.4d839cd4.js"
+    "static/css/main.0b91dae4.css",
+    "static/js/main.d739181b.js"
   ]
 }
