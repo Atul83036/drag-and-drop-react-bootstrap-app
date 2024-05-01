@@ -16,20 +16,20 @@ Clone the repository to your local machine.
 
 Navigate to the project directory.
 
-Install dependencies using npm install.
+Install dependencies using **`npm install`**.
 
-Run the development server using npm start.
+Run the development server using **`npm start`**.
 
 Open http://localhost:3000 to view the app in your browser.
 
 ## Dependencies
 This project utilizes the following dependencies:
 
-React: A JavaScript library for building user interfaces.
+**React**: A JavaScript library for building user interfaces.
 
-React Bootstrap: React components built with Bootstrap.
+**React Bootstrap**: React components built with Bootstrap.
 
-react-beautiful-dnd: Beautiful and accessible drag and drop for lists with React.
+**react-beautiful-dnd**: Beautiful and accessible drag and drop for lists with React.
 
 ## Available Scripts
 In the project directory, you can run:
