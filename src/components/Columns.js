@@ -15,7 +15,6 @@ const Columns = () => {
   });
 
   useEffect(() => {
-    // Load state from localStorage on component mount
     const storedCards = localStorage.getItem('cards');
     if (storedCards) {
       setCards(JSON.parse(storedCards));
@@ -23,14 +22,13 @@ const Columns = () => {
   }, []);
 
   useEffect(() => {
-    // Save state to localStorage whenever it changes
     localStorage.setItem('cards', JSON.stringify(cards));
   }, [cards]);
 
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => {
     setShowModal(false);
-    setSelectedCard(null); // Clear selected card when modal is closed
+    setSelectedCard(null); 
   };
 
   const handleTitleChange = (event) => setTitle(event.target.value);
@@ -38,20 +36,17 @@ const Columns = () => {
   const handleColumnChange = (event) => setSelectedColumn(event.target.value);
 
   const handleSubmit = () => {
-    // Validate title
     if (!/^[A-Za-z\s]+$/.test(title)) {
       alert('Title should only contain alphabets.');
       return;
     }
 
-    // Validate description length
     if (description.length < 25) {
       alert('Description should be at least 25 characters long.');
       return;
     }
 
     if (selectedCard) {
-      // If a card is selected for editing, update its data and move it to the new column
       const updatedCards = { ...cards };
       const prevColumn = selectedCard.column;
       const updatedColumn = [...updatedCards[prevColumn]];
@@ -60,28 +55,25 @@ const Columns = () => {
         ...selectedCard,
         title: title,
         description: description,
-        column: selectedColumn // Update the card's column
+        column: selectedColumn 
       };
-      updatedColumn.splice(editedCardIndex, 1); // Remove the card from the previous column
+      updatedColumn.splice(editedCardIndex, 1); 
       updatedCards[prevColumn] = updatedColumn;
 
-      // Add the card to the new column
       updatedCards[selectedColumn] = [...updatedCards[selectedColumn], editedCard];
       setCards(updatedCards);
     } else {
-      // Otherwise, add a new card to the selected column
       const newCard = {
-        id: Date.now(), // Unique ID for the card
+        id: Date.now(), 
         title: title,
         description: description,
-        column: selectedColumn // Assign the selected column to the new card
+        column: selectedColumn 
       };
       const updatedCards = { ...cards };
       updatedCards[selectedColumn] = [...updatedCards[selectedColumn], newCard];
       setCards(updatedCards);
     }
 
-    // Reset form fields and close the modal
     setTitle('');
     setDescription('');
     setSelectedColumn('');
@@ -91,12 +83,10 @@ const Columns = () => {
   const onDragEnd = (result) => {
     const { source, destination,} = result;
 
-    // If dropped outside of the droppable area, do nothing
     if (!destination) {
       return;
     }
 
-    // If dropped in the same location, do nothing
     if (
       source.droppableId === destination.droppableId &&
       source.index === destination.index
@@ -109,7 +99,7 @@ const Columns = () => {
 
     const updatedCards = { ...cards };
     const [movedCard] = updatedCards[sourceColumn].splice(source.index, 1);
-    movedCard.column = destinationColumn; // Update the moved card's column
+    movedCard.column = destinationColumn; 
     updatedCards[destinationColumn].splice(destination.index, 0, movedCard);
 
     setCards(updatedCards);
@@ -118,7 +108,7 @@ const Columns = () => {
   const handleEditCard = (card) => {
     setTitle(card.title);
     setDescription(card.description);
-    setSelectedColumn(card.column); // Select the card's current column by default
+    setSelectedColumn(card.column); 
     setSelectedCard(card);
     handleShowModal();
   };
@@ -143,7 +133,7 @@ const Columns = () => {
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            onClick={() => handleEditCard(card)} // Open modal for editing
+                            onClick={() => handleEditCard(card)} 
                           >
                             <Card className='d-flex justify-content-center align-items-center m-2'>
                               <h5>{card.title}</h5>
